@@ -1,4 +1,4 @@
-import { BaseType } from "./base.types"
+import { BaseType, Prettify } from "./base.types"
 
 export enum EnumTaskPriority {
   low = 'low',
@@ -6,10 +6,10 @@ export enum EnumTaskPriority {
   high = 'high'
 }
 
-export type TaskType = BaseType & {
+export type TaskType = Prettify <BaseType & {
   name: string
   priority?: EnumTaskPriority
   isCompleted: boolean
-}
+}>
 
 export type TypeTaskFormStateType = Partial<Omit<TaskType, 'id'| 'updatedAt'>>
