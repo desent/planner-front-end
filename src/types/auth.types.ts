@@ -1,12 +1,11 @@
-import { UserType } from "./user.types";
+import { UserType } from './user.types';
 
 export type AuthFormType = {
-  email: string
-  password: string
-}
+  email: string;
+  password: string;
+};
 
 export type AuthResponseType = {
-  accessToken: string
-  user: UserType
-}
-
+  accessToken: string;
+  user: UserType;
+};

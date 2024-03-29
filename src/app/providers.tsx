@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import { PropsWithChildren, useState } from "react";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { PropsWithChildren, useState } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 export function Providers({ children }: PropsWithChildren) {
@@ -9,16 +9,16 @@ export function Providers({ children }: PropsWithChildren) {
     new QueryClient({
       defaultOptions: {
         queries: {
-          refetchOnWindowFocus: false
-        }
-      }
-    })
-  )
+          refetchOnWindowFocus: false,
+        },
+      },
+    }),
+  );
 
   return (
     <QueryClientProvider client={client}>
       {children}
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  )
+  );
 }

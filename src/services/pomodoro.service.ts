@@ -1,11 +1,17 @@
-import { axiosWithAuth } from "@/api/interceptors";
-import { PomodoroSessionResponseType, PomodoroSessionStateType, PomodoroRoundStateType } from "@/types/pomodoro.types";
+import { axiosWithAuth } from '@/api/interceptors';
+import {
+  PomodoroSessionResponseType,
+  PomodoroSessionStateType,
+  PomodoroRoundStateType,
+} from '@/types/pomodoro.types';
 
 const BASE_URL = '/user/timer';
 
 export const pomodoroService = {
   async getTodaySession() {
-    const response = await axiosWithAuth.get<PomodoroSessionResponseType>(`${BASE_URL}/today`);
+    const response = await axiosWithAuth.get<PomodoroSessionResponseType>(
+      `${BASE_URL}/today`,
+    );
     return response;
   },
 

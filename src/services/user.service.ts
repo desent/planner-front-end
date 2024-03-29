@@ -1,14 +1,13 @@
-import { axiosWithAuth } from "@/api/interceptors";
+import { axiosWithAuth } from '@/api/interceptors';
 
-import { UserType, UserFormType } from "@/types/user.types";
-
+import { UserType, UserFormType } from '@/types/user.types';
 
 export type ProfileResponseType = {
-  user: UserType,
+  user: UserType;
   statistics: {
-    label: string,
-    value: string,
-  }[]
+    label: string;
+    value: string;
+  }[];
 };
 
 const BASE_URL = '/user/profile';
@@ -22,5 +21,5 @@ export const userService = {
   async update(data: UserFormType) {
     const response = await axiosWithAuth.put(BASE_URL, data);
     return response.data;
-  }
+  },
 };

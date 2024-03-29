@@ -1,9 +1,9 @@
 export type BaseType = {
-  id: string
-  createdAt?:string
-  updatedAt?:string
-}
+  id: string;
+  createdAt?: string;
+  updatedAt?: string;
+};
 
 export type Prettify<T> = {
-  [K in keyof T]:T[K]
+  [K in keyof T]: T[K];
 } & {};

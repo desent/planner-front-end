@@ -1,5 +1,8 @@
-import { axiosWithAuth } from "@/api/interceptors";
-import { TimeBlockResponseType, TimeBlockFormStateType } from "@/types/time-block.types";
+import { axiosWithAuth } from '@/api/interceptors';
+import {
+  TimeBlockResponseType,
+  TimeBlockFormStateType,
+} from '@/types/time-block.types';
 
 const BASE_URL = '/user/time-blocks';
 
@@ -9,7 +12,7 @@ export const timeBlockService = {
     return response;
   },
 
-  async createTimeBlock(data: TimeBlockFormStateType ) {
+  async createTimeBlock(data: TimeBlockFormStateType) {
     const response = await axiosWithAuth.post(BASE_URL, data);
     return response;
   },
@@ -25,7 +28,9 @@ export const timeBlockService = {
   },
 
   async updateTimeBlocksOrder(ids: string[]) {
-    const response = await axiosWithAuth.post(`${BASE_URL}/update-order`, { ids });
+    const response = await axiosWithAuth.post(`${BASE_URL}/update-order`, {
+      ids,
+    });
     return response;
   },
 };

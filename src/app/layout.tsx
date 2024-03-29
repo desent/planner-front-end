@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
-import "./globals.scss";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/constants/seo.constants";
-import { Providers } from "./providers";
+import type { Metadata } from 'next';
+import { Noto_Sans } from 'next/font/google';
+import './globals.scss';
+import { SITE_DESCRIPTION, SITE_NAME } from '@/constants/seo.constants';
+import { Providers } from './providers';
 import { Toaster } from 'sonner';
 
 const zen = Noto_Sans({
-  subsets: ["latin"],
-  weight: ['300','400','500','500', '700'],
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '500', '700'],
   display: 'swap',
   variable: '--font-zen',
-  style: ['normal']
+  style: ['normal'],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-}
+};
 
 export default function RootLayout({
   children,
@@ -31,14 +31,9 @@ export default function RootLayout({
       <body className={zen.className}>
         <Providers>
           {children}
-          <Toaster
-            theme="dark"
-            position="bottom-right"
-            duration={1500}
-          />
+          <Toaster theme="dark" position="bottom-right" duration={1500} />
         </Providers>
-        
-        </body>
+      </body>
     </html>
   );
 }

@@ -1,12 +1,16 @@
-import { axiosWithOutAuth } from "@/api/interceptors"
+import { axiosWithOutAuth } from '@/api/interceptors';
 import { AuthFormType, AuthResponseType } from '@/types/auth.types';
-import { getAccessToken, removeTokenFromStorage, saveTokenStorage } from '@/services/auth-token.service';
+import {
+  getAccessToken,
+  removeTokenFromStorage,
+  saveTokenStorage,
+} from '@/services/auth-token.service';
 
 export const authService = {
-  async main (type: 'login' | 'register', data: AuthFormType) {
+  async main(type: 'login' | 'register', data: AuthFormType) {
     const response = await axiosWithOutAuth.post<AuthResponseType>(
       `/auth/${type}`,
-      data
+      data,
     );
     const accessToken = response.data.accessToken;
     if (accessToken) {
@@ -17,7 +21,7 @@ export const authService = {
 
   async getNewTokens() {
     const response = await axiosWithOutAuth.post<AuthResponseType>(
-      '/auth/login/access-token'
+      '/auth/login/access-token',
     );
 
     const accessToken = response.data.accessToken;
@@ -29,9 +33,9 @@ export const authService = {
   },
   async logout() {
     const response = await axiosWithOutAuth.post<boolean>('/auth/logout');
-    if(response.data) {
+    if (response.data) {
       removeTokenFromStorage();
     }
     return response;
-  }
-}
+  },
+};

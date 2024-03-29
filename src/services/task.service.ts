@@ -1,5 +1,5 @@
-import { axiosWithAuth } from "@/api/interceptors";
-import { TaskType, TypeTaskFormStateType } from "@/types/task.types";
+import { axiosWithAuth } from '@/api/interceptors';
+import { TaskType, TypeTaskFormStateType } from '@/types/task.types';
 
 const BASE_URL = '/user/tasks';
 
