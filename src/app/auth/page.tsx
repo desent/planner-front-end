@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import type { ReactNode } from 'react';
 import { NO_INDEX_PAGE } from '@/constants/seo.constants';
 import { Auth } from './auth';
 
@@ -8,6 +7,6 @@ export const metadata: Metadata = {
   ...NO_INDEX_PAGE,
 };
 
-export default function AuthPage(): ReactNode {
+export default function AuthPage() {
   return <Auth />;
 }
